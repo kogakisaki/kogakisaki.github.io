@@ -1434,10 +1434,12 @@ img {
   }
 
   .menu-dropdown {
-    width: calc(100vw - var(--space-xl));
-    left: auto;
-    right: 0;
-    transform: translateY(10px);
+    width: 90vw; /* Sử dụng 90% chiều rộng màn hình để tránh bị khuyết */
+    left: 5vw; /* Căn giữa menu theo chiều ngang bằng cách đặt margin từ hai bên */
+    transform: translateX(0) translateY(10px);
+    border-radius: var(
+      --radius-lg
+    ); /* Giữ border-radius nếu muốn góc bo tròn */
   }
 
   .menu-dropdown.show {
