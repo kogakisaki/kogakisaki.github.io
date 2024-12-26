@@ -4,6 +4,8 @@ site:
   description: "Powerful Discord bot for your server"
   version: "1.0.0"
 
+inviteLink: "https://discord.com/oauth2/authorize?client_id=1236047543310487553&permissions=1750422444310006&integration_type=0&scope=applications.commands+bot"
+
 # Home Page Content
 home:
   welcome: "Welcome to Coz"
@@ -69,6 +71,12 @@ features:
     description: "Create interactive polls and gather feedback"
     icon: "fa-poll"
     tags: ["engagement", "utility"]
+
+  - title: "New Amazing Feature"
+    description: "This amazing feature is coming soon!"
+    icon: "fa-magic"
+    tags: ["new", "exciting"]
+    comingSoon: true
 
 # Privacy Policy Content
 privacy:

@@ -50,6 +50,7 @@ function formatContent(content) {
 }
 
 // Format features content with search and filters
+// Cập nhật hàm formatFeatures để bao gồm nhãn "Coming Soon"
 function formatFeatures(features) {
   let html = `
     <div class="features-controls">
@@ -62,6 +63,7 @@ function formatFeatures(features) {
         <button class="feature-filter" data-filter="moderation">Moderation</button>
         <button class="feature-filter" data-filter="automation">Automation</button>
         <button class="feature-filter" data-filter="premium">Premium</button>
+        <button class="feature-filter" data-filter="coming-soon">Coming Soon</button>
       </div>
     </div>
     <div class="features-grid">`;
@@ -74,20 +76,29 @@ function formatFeatures(features) {
       : "";
 
     const premiumClass = feature.premium ? "premium" : "";
+    const comingSoonClass = feature.comingSoon ? "coming-soon" : "";
+
     const premiumBadge = feature.premium
       ? `<span class="feature-badge premium">Premium</span>`
       : "";
 
+    const comingSoonBadge = feature.comingSoon
+      ? `<span class="feature-badge coming-soon">Coming Soon</span>`
+      : "";
+
+    const badgeHtml = `${premiumBadge}${comingSoonBadge}`;
+
     html += `
-      <div class="feature-card ${premiumClass}" 
+      <div class="feature-card ${premiumClass} ${comingSoonClass}" 
            data-tags="${feature.tags?.join(" ")}"
-           data-premium="${feature.premium ? "true" : "false"}">
+           data-premium="${feature.premium ? "true" : "false"}"
+           data-coming-soon="${feature.comingSoon ? "true" : "false"}">
         <div class="feature-icon">
           <i class="fas ${feature.icon}"></i>
         </div>
         <div class="feature-header">
           <h3 class="feature-title">${feature.title}</h3>
-          ${premiumBadge}
+          ${badgeHtml}
         </div>
         <p class="feature-description">${feature.description}</p>
         <div class="feature-tags">
@@ -279,6 +290,11 @@ function updateSection(hash) {
 async function initializeContent() {
   const config = await loadConfig();
   if (config) {
+    const inviteLinkElement = document.querySelector(".invite-link");
+    if (inviteLinkElement && config.inviteLink) {
+      inviteLinkElement.href = config.inviteLink;
+    }
+
     document.getElementById("privacy-content").innerHTML = formatContent(
       config.privacy.content
     );
