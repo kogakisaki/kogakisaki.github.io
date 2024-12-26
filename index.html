@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discord Bot</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <a href="#home" class="brand">
+          <img src="img/coz.png" alt="Bot Logo" class="logo" />
+          <span class="brand-name">Coz</span>
+        </a>
+
+        <nav class="nav-menu">
+          <div class="menu-trigger" id="currentSection">
+            <i class="fas fa-home"></i>
+            <span class="trigger-text">Home</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="menu-dropdown">
+            <a href="#home" class="menu-item active" data-section="home">
+              <i class="fas fa-home"></i>
+              <div class="menu-item-content">
+                <div class="menu-item-title">Home</div>
+                <div class="menu-item-desc">Welcome page</div>
+              </div>
+            </a>
+            <a href="#pp" class="menu-item" data-section="privacy">
+              <i class="fas fa-shield-alt"></i>
+              <div class="menu-item-content">
+                <div class="menu-item-title">Privacy Policy</div>
+                <div class="menu-item-desc">Data collection & usage</div>
+              </div>
+            </a>
+            <a href="#tos" class="menu-item" data-section="tos">
+              <i class="fas fa-file-contract"></i>
+              <div class="menu-item-content">
+                <div class="menu-item-title">Terms of Service</div>
+                <div class="menu-item-desc">Usage guidelines & rules</div>
+              </div>
+            </a>
+          </div>
+        </nav>
+
+        <button class="theme-toggle" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="content-wrapper">
+        <div id="home" class="content-section active">
+          <div class="welcome-header">
+            <h1>
+              <i class="fas fa-robot"></i>
+              <span>Welcome to Coz</span>
+            </h1>
+            <p class="welcome-subtitle">
+              Enhance your Discord server with powerful features
+            </p>
+          </div>
+
+          <div class="welcome-content">
+            <!-- Invite Card -->
+            <div class="welcome-card invite-card">
+              <i class="fas fa-plus-circle"></i>
+              <h2>Add to Server</h2>
+              <p>Get started by adding our bot to your Discord server</p>
+              <a
+                href="https://discord.com/oauth2/authorize"
+                class="invite-link"
+                target="_blank"
+              >
+                <i class="fab fa-discord"></i>
+                Invite Bot
+              </a>
+            </div>
+
+            <!-- Privacy Card -->
+            <div class="welcome-card">
+              <i class="fas fa-shield-alt"></i>
+              <h2>Privacy First</h2>
+              <p>
+                Your data is secure with us. We prioritize your privacy and data
+                protection.
+              </p>
+              <a href="#pp" class="welcome-link">View Privacy Policy</a>
+            </div>
+
+            <!-- Terms Card -->
+            <div class="welcome-card">
+              <i class="fas fa-file-contract"></i>
+              <h2>Clear Terms</h2>
+              <p>
+                Understand how to use our bot properly and what to expect from
+                our service.
+              </p>
+              <a href="#tos" class="welcome-link">View Terms of Service</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="privacy" class="content-section">
+          <h1>
+            <i class="fas fa-shield-alt"></i>
+            <span>Privacy Policy</span>
+          </h1>
+          <div id="privacy-content"></div>
+        </div>
+
+        <div id="tos" class="content-section">
+          <h1>
+            <i class="fas fa-file-contract"></i>
+            <span>Terms of Service</span>
+          </h1>
+          <div id="tos-content"></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

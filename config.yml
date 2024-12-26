@@ -1,0 +1,98 @@
+# Site Configuration
+site:
+  name: "Coz"
+  description: "Powerful Discord bot for your server"
+  version: "1.0.0"
+
+# Home Page Content
+home:
+  welcome: "Welcome to Coz"
+  cards:
+    privacy:
+      icon: "shield-alt"
+      title: "Privacy First"
+      description: "Your data is secure with us. We prioritize your privacy and data protection."
+      link: "#pp"
+      button: "View Privacy Policy"
+    terms:
+      icon: "file-contract"
+      title: "Clear Terms"
+      description: "Understand how to use our bot properly and what to expect from our service."
+      link: "#tos"
+      button: "View Terms of Service"
+
+# Privacy Policy Content
+privacy:
+  content: |
+    This Privacy Policy explains how we collect, use, and protect your personal information.
+    
+    1. Information Collection
+    - User IDs and Discord server details
+    - Command usage patterns and interactions
+    - Message content for command processing
+    - Server configuration preferences
+    - Error logs and performance data
+    
+    2. Data Usage
+    - Improving bot functionality and user experience
+    - Analyzing performance and fixing issues
+    - Personalizing responses and features
+    - Maintaining service security
+    - Responding to user inquiries
+    
+    3. Data Protection
+    - Industry-standard encryption protocols
+    - Regular security audits and updates
+    - Strict access control policies
+    - Secure data storage practices
+    - Regular backups and monitoring
+    
+    4. User Rights
+    - Access your stored data
+    - Request data deletion
+    - Opt-out of non-essential data collection
+    - Update your preferences
+    - Contact support for privacy concerns
+
+# Terms of Service Content
+tos:
+  content: |
+    Please read these Terms of Service carefully before using our bot.
+    
+    1. Acceptable Use
+    - Follow Discord's Terms of Service and Guidelines
+    - Use commands responsibly and appropriately
+    - Respect rate limits and usage restrictions
+    - Maintain appropriate server content
+    - Report misuse and violations
+    
+    2. Service Limitations
+    - Bot availability is provided "as is"
+    - Features may change without prior notice
+    - We reserve the right to limit or terminate access
+    - No guarantee of uninterrupted service
+    - Performance may vary based on conditions
+    
+    3. User Responsibilities
+    - Keep your server secure
+    - Report bugs and security issues
+    - Follow community guidelines
+    - Maintain appropriate configurations
+    - Respect other users' rights
+    
+    4. Liability
+    - No warranty for uninterrupted service
+    - Not responsible for data loss
+    - Limited liability for damages
+    - No responsibility for user-generated content
+    - Right to modify terms
+
+# Additional Settings
+settings:
+  defaultTheme: "light"  # light or dark
+  defaultSection: "home" # home, privacy, or tos
+  animations:
+    enable: true
+    duration: 300 # in milliseconds
+  mobile:
+    breakpoint: 768 # in pixels
