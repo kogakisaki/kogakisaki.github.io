@@ -21,32 +21,81 @@ home:
       link: "#tos"
       button: "View Terms of Service"
 
+# Features Content
+features:
+  - title: "Moderation Tools"
+    description: "Powerful moderation features to keep your server safe and organized"
+    icon: "fa-shield"
+    tags: ["moderation", "security", "automation"]
+
+  - title: "Custom Commands"
+    description: "Create and manage custom commands for your server"
+    icon: "fa-code"
+    tags: ["customization", "automation"]
+
+  - title: "Music Player"
+    description: "High quality music playback with playlist support"
+    icon: "fa-music"
+    tags: ["entertainment", "music"]
+    premium: true
+
+  - title: "Welcome System"
+    description: "Customize welcome messages and autoroles for new members"
+    icon: "fa-door-open"
+    tags: ["automation", "customization"]
+
+  - title: "Leveling System"
+    description: "Engage your community with XP and level roles"
+    icon: "fa-chart-line"
+    tags: ["engagement", "roles"]
+
+  - title: "Server Stats"
+    description: "Detailed analytics and insights about your server"
+    icon: "fa-chart-bar"
+    tags: ["analytics", "tracking"]
+    premium: true
+
+  - title: "Auto Moderation"
+    description: "Automated content filtering and spam protection"
+    icon: "fa-robot"
+    tags: ["moderation", "security", "automation"]
+
+  - title: "Reaction Roles"
+    description: "Self-assignable roles through reactions"
+    icon: "fa-tasks"
+    tags: ["roles", "automation"]
+
+  - title: "Polls & Surveys"
+    description: "Create interactive polls and gather feedback"
+    icon: "fa-poll"
+    tags: ["engagement", "utility"]
+
 # Privacy Policy Content
 privacy:
   content: |
     This Privacy Policy explains how we collect, use, and protect your personal information.
-    
+
     1. Information Collection
     - User IDs and Discord server details
     - Command usage patterns and interactions
     - Message content for command processing
     - Server configuration preferences
     - Error logs and performance data
-    
+
     2. Data Usage
     - Improving bot functionality and user experience
     - Analyzing performance and fixing issues
     - Personalizing responses and features
     - Maintaining service security
     - Responding to user inquiries
-    
+
     3. Data Protection
     - Industry-standard encryption protocols
     - Regular security audits and updates
     - Strict access control policies
     - Secure data storage practices
     - Regular backups and monitoring
-    
+
     4. User Rights
     - Access your stored data
     - Request data deletion
@@ -58,28 +107,28 @@ privacy:
 tos:
   content: |
     Please read these Terms of Service carefully before using our bot.
-    
+
     1. Acceptable Use
     - Follow Discord's Terms of Service and Guidelines
     - Use commands responsibly and appropriately
     - Respect rate limits and usage restrictions
     - Maintain appropriate server content
     - Report misuse and violations
-    
+
     2. Service Limitations
     - Bot availability is provided "as is"
     - Features may change without prior notice
     - We reserve the right to limit or terminate access
     - No guarantee of uninterrupted service
     - Performance may vary based on conditions
-    
+
     3. User Responsibilities
     - Keep your server secure
     - Report bugs and security issues
     - Follow community guidelines
     - Maintain appropriate configurations
     - Respect other users' rights
-    
+
     4. Liability
     - No warranty for uninterrupted service
     - Not responsible for data loss
@@ -89,8 +138,8 @@ tos:
 
 # Additional Settings
 settings:
-  defaultTheme: "light"  # light or dark
-  defaultSection: "home" # home, privacy, or tos
+  defaultTheme: "light" # light or dark
+  defaultSection: "home" # home, privacy, tos, or features
   animations:
     enable: true
     duration: 300 # in milliseconds
