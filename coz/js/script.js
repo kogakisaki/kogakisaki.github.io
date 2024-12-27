@@ -50,8 +50,19 @@ function formatContent(content) {
 }
 
 // Format features content with search and filters
-// Cập nhật hàm formatFeatures để bao gồm nhãn "Coming Soon"
 function formatFeatures(features) {
+  // Get unique tags from all features
+  const allTags = [...new Set(features.flatMap((f) => f.tags || []))];
+
+  // Create filter buttons HTML from tags
+  const filterButtonsHtml = allTags
+    .map(
+      (tag) => `
+    <button class="feature-filter" data-filter="${tag}">${tag}</button>
+  `
+    )
+    .join("");
+
   let html = `
     <div class="features-controls">
       <div class="feature-search">
@@ -60,8 +71,7 @@ function formatFeatures(features) {
       </div>
       <div class="feature-filters">
         <button class="feature-filter active" data-filter="all">All</button>
-        <button class="feature-filter" data-filter="moderation">Moderation</button>
-        <button class="feature-filter" data-filter="automation">Automation</button>
+        ${filterButtonsHtml}
         <button class="feature-filter" data-filter="premium">Premium</button>
         <button class="feature-filter" data-filter="coming-soon">Coming Soon</button>
       </div>
@@ -165,21 +175,25 @@ function filterFeatures(searchText, filterType = "all") {
       .textContent.toLowerCase();
     const tags = card.dataset.tags?.toLowerCase() || "";
     const isPremium = card.dataset.premium === "true";
+    const isComingSoon = card.dataset.comingSoon === "true";
 
     let matches =
       title.includes(searchLower) ||
       description.includes(searchLower) ||
       tags.includes(searchLower);
 
+    // Apply filter
     if (filterType !== "all") {
       if (filterType === "premium") {
         matches = matches && isPremium;
+      } else if (filterType === "coming-soon") {
+        matches = matches && isComingSoon;
       } else {
         matches = matches && tags.includes(filterType);
       }
     }
 
-    // Apply smooth transition
+    // Smooth transition
     if (matches) {
       card.style.display = "flex";
       requestAnimationFrame(() => {
